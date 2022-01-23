@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+/**
+ * @author Taco
+ *
+ */
+module jb4Assignment4 {
+	requires junit;
+}

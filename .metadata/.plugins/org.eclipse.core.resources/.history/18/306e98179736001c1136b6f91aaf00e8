@@ -1,0 +1,29 @@
+package com.ss.basics4.three;
+
+import java.util.LinkedList;
+
+public class BB {
+	Integer size;
+	LinkedList<Integer> data = new LinkedList<>();
+	
+	public BB(int size) {
+		this.size = size;
+	}
+	
+	public synchronized void make() throws InterruptedException {
+		if(data.size() == size) wait();
+		int value = (int)((Math.random()*100)+1);
+		System.out.println("Produced : " + value);
+		data.add(value);
+		notify();
+		Thread.sleep(1000);
+	}
+	
+	public synchronized void take() throws InterruptedException {
+		if(data.size() == 0) wait();
+		int value = data.removeFirst();
+		System.out.println("Consumed : " + value);
+		notify();
+		Thread.sleep(1000);
+	}
+}

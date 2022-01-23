@@ -1,0 +1,5 @@
+package com.ss.basics5.two;
+
+public interface checkOperations {
+
+}

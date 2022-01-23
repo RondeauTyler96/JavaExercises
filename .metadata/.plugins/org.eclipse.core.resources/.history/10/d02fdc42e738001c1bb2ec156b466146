@@ -1,0 +1,35 @@
+package com.ss.basics5.one;
+//@author TylerRondeau
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class App {
+
+	public static void main(String[] args) {
+		App run = new App();
+		List<String> lamStr = Arrays.asList("Java","String","Array", "eString", "aString", "aText", "e");
+		System.out.println("Initial String List : ");
+		lamStr.stream().forEach(name->System.out.println(name));
+		//sort by string length and reprint
+		System.out.println("\nSorted by length(naturally) String List : ");
+		run.sortLongShort(lamStr);
+		//sort backward by string length and reprint
+		System.out.println("\nSorted by length(short to long) String List : ");
+		run.sortShortLong(lamStr);
+		//sort alphabetically by first character only
+		System.out.println("\nSorted by first character being e(ignoring case) : ");
+		run.sortEFirst(lamStr);
+	}
+	public void sortLongShort(List<String> lamStr) {
+		lamStr.stream().sorted((s1,s2) -> s2.length() - s1.length()).collect(Collectors.toList()).forEach(name->System.out.println(name));
+	}
+	public void sortShortLong(List<String> lamStr) {
+		lamStr.stream().sorted((s1,s2) -> s1.length() - s2.length()).collect(Collectors.toList()).forEach(name->System.out.println(name));
+	}
+	public void sortEFirst(List<String> lamStr) {
+		lamStr.stream().sorted(Comparator.comparingInt(w -> w.toLowerCase().charAt(0) == 'e' ? 0:1)).collect(Collectors.toList())
+		.forEach(name->System.out.println(name));
+	}
+}

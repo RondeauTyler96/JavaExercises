@@ -1,0 +1,42 @@
+package com.ss.basics5.two;
+
+import java.util.Arrays;
+import java.util.List;
+
+//@Author TylerRondeau
+public class Functional {
+	public static void main(String[] args) {
+		Functional run = new Functional();
+		//Given a list of non-negative integers, return an integer list of the rightmost digits. (Note: use %)
+		List<Integer> Test = Arrays.asList(1,22,93);
+		List<Integer> Test2 = Arrays.asList(16,8,886,8,1);
+		List<Integer> Test3 = Arrays.asList(10,0);
+		Test = run.rightDigit(Test);
+		Test2 = run.rightDigit(Test2);
+		Test3 = run.rightDigit(Test3);
+		System.out.println("The result for test 1 is : "+ Test.toString());
+		System.out.println("The result for test 2 is : "+ Test2.toString());
+		System.out.println("The result for test 3 is : "+ Test3.toString());
+		
+		//Given a list of integers, return a list where each integer is multiplied by 2.
+		Test2.remove(4);
+		Test2.add(-1);
+		Test = run.doubling(Test);
+		Test2 = run.doubling(Test2);
+		System.out.println("The result for test 1 is : "+ Test.toString());
+		System.out.println("The result for test 2 is : "+ Test2.toString());
+		
+		//Given a list of strings, return a list where each string has all its "x" removed.
+		
+	}
+	
+	public List<Integer> rightDigit(List<Integer> ints){
+		ints.replaceAll(n-> n%10);
+		return ints;
+	}
+	
+	public List<Integer> doubling(List<Integer> ints){
+		ints.replaceAll(n-> n*2);
+		return ints;
+	}
+}

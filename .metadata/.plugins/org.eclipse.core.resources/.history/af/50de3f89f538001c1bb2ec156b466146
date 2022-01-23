@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package com.ss.basics5.one;
+
+/**
+ * @author Taco
+ *
+ */
+public class DateTimeEx {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

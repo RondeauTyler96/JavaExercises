@@ -1,0 +1,48 @@
+package com.ss.basics5.one;
+
+import java.time.DayOfWeek;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.time.temporal.TemporalAdjusters;
+
+// @author Tyler Rondeau
+
+
+public class DateTimeEx {
+	public static void main(String[] args) {
+		//Which class would you use to store your birthday in years, months, days, seconds, and nanoseconds?
+		//(Year,Month,Day,Hour,Minute,Second,Ms)
+		LocalDateTime birthday = LocalDateTime.of(1996, 4, 29, 02, 50, 17, 12);
+		System.out.println(birthday);
+		
+		//Given a random date, how would you find the date of the previous Thursday?
+		LocalDateTime ThursBefore = birthday.with(TemporalAdjusters.previous(DayOfWeek.THURSDAY));
+		System.out.println(ThursBefore);
+		
+		//What is the difference between a ZoneId and a ZoneOffset?
+		//Zoneid takes a string to give you the time from a specific location. More specifically it has built in offsets from UTC to give you the time
+		LocalDateTime todaySeoul = LocalDateTime.now(ZoneId.of("Asia/Seoul"));
+		System.out.println(todaySeoul);
+		//Zoneoffset adds an offset to the end of the time. The following adds 5 hours to the time, then adds a zoneOffset of 5 to indicate such.
+		OffsetDateTime ThirteenOffset = todaySeoul.plusHours(5).atOffset(ZoneOffset.ofHours(5));
+		System.out.println(ThirteenOffset);
+		
+		//How would you convert an Instant to a ZonedDateTime? How would you convert a ZonedDateTime to an Instant?
+		Instant ins = Instant.now();
+		ZonedDateTime insZDT = ins.atZone(ZoneId.systemDefault());
+		
+		//Write an example that, for a given year, reports the length of each month within that year.
+		
+		
+		//Write an example that, for a given month of the current year, lists all of the Mondays in that month.
+		
+		
+		//Write an example that tests whether a given date occurs on Friday the 13th.
+		
+		
+	}
+}

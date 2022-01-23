@@ -1,0 +1,35 @@
+package com.ss.basics5.one;
+
+import java.time.DayOfWeek;
+import java.time.LocalDateTime;
+import java.time.temporal.TemporalAdjusters;
+
+// @author Tyler Rondeau
+
+
+public class DateTimeEx {
+	public static void main(String[] args) {
+		//Which class would you use to store your birthday in years, months, days, seconds, and nanoseconds?
+		//(Year,Month,Day,Hour,Minute,Second,Ms)
+		LocalDateTime birthday = LocalDateTime.of(1996, 4, 29, 02, 50, 17, 12);
+		System.out.println(birthday);
+		//Given a random date, how would you find the date of the previous Thursday?
+		LocalDateTime ThursBefore = birthday.with(TemporalAdjusters.previous(DayOfWeek.THURSDAY));
+		System.out.println(ThursBefore);
+		//What is the difference between a ZoneId and a ZoneOffset?
+		
+		
+		//How would you convert an Instant to a ZonedDateTime? How would you convert a ZonedDateTime to an Instant?
+		
+		
+		//Write an example that, for a given year, reports the length of each month within that year.
+		
+		
+		//Write an example that, for a given month of the current year, lists all of the Mondays in that month.
+		
+		
+		//Write an example that tests whether a given date occurs on Friday the 13th.
+		
+		
+	}
+}

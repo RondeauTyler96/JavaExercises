@@ -1,0 +1,7 @@
+package com.ss.basics5.two;
+//@Author TylerRondeau
+public class QuestionTwo {
+	public static void main(String[] args) {
+		
+	}
+}
